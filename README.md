@@ -28,9 +28,19 @@ Interpreter of a LISP-like language containing definitions of variables, instruc
 
 *loop stmt* → ( WHILE *bool expr stmt block* )
 
-*num expr* → ( ADD *num expr num expr* ) | ( SUB *num expr num expr* ) | ( MUL *num expr num expr* ) | ( DIV *num expr num expr* ) | *number* | *variable id*
+*num expr* → ( ADD *num expr num expr* ) | 
+           * ( SUB *num expr num expr* ) | 
+             ( MUL *num expr num expr* ) | 
+             ( DIV *num expr num expr* ) | 
+             *number* | 
+             *variable id*
 
-*bool expr* -> (LT *num expr num expr*) | (GT *num expr num expr*) | (EQ *num expr num expr*) | (AND *bool expr bool expr*) | (OR *bool expr bool expr*) | (NOT *bool expr*) | TRUE | FALSE
+*bool expr* -> (LT *num expr num expr*) |
+            * (GT *num expr num expr*) | 
+              (EQ *num expr num expr*) | 
+              (AND *bool expr bool expr*) | 
+              (OR *bool expr bool expr*) | 
+              (NOT *bool expr*) | TRUE | FALSE
 
 *variable id → alpha list*
 
