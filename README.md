@@ -18,13 +18,7 @@ Interpreter of a LISP-like language containing definitions of variables, instruc
 
 *statement list* → *statement statement list | statement*
 
-*statement → variable def* |
-
-             *io stmt* |
-
-            *cond stmt* |
-
-            *loop stmt*
+*statement → variable def* | *io stmt* | *cond stmt* | *loop stmt*
 
 *variable def* → ( SET *variable id num expr* )
 
@@ -34,31 +28,9 @@ Interpreter of a LISP-like language containing definitions of variables, instruc
 
 *loop stmt* → ( WHILE *bool expr stmt block* )
 
-*num expr* → ( ADD *num expr num expr* )
+*num expr* → ( ADD *num expr num expr* ) | ( SUB *num expr num expr* ) | ( MUL *num expr num expr* ) | ( DIV *num expr num expr* ) | *number* | *variable id*
 
-             | ( SUB *num expr num expr* )
-
-             | ( MUL *num expr num expr* )
-
-             | ( DIV *num expr num expr* )
-
-             | *number*
-
-             | *variable id*
-
-*bool expr* -> (LT *num expr num expr*)
-
-               | (GT *num expr num expr*)
-
-               | (EQ *num expr num expr*)
-
-               | (AND *bool expr bool expr*)
-
-               | (OR *bool expr bool expr*)
-
-               | (NOT *bool expr*)
-
-               | TRUE | FALSE
+*bool expr* -> (LT *num expr num expr*) | (GT *num expr num expr*) | (EQ *num expr num expr*) | (AND *bool expr bool expr*) | (OR *bool expr bool expr*) | (NOT *bool expr*) | TRUE | FALSE
 
 *variable id → alpha list*
 
